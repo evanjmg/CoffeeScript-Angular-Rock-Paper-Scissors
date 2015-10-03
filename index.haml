@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+%html{:lang => "en", "ng-app" => "Rps"}
+%head
+	%meta{:charset => "UTF-8"}/
+	%title Document
+	%link{:rel => "stylesheet", :href => "./css/style.css"}/
+%body{ "ng-controller" => "MainCtrl as main"}
+	.container
+		%h1.center Rock Paper Scissors
+		%hr
+		.selection-wrapper
+			%h4.center Make a Decision
+
+			%select{ "ng-model" => 'selectorValue'}
+				%option Rock
+				%option Paper
+				%option Scissors
+
+			.selection{ "ng-show" => "selectorValue"}
+				{{ selectorValue }}
+			
+			%button.submit{ "ng-click" => "decide()"} Submit
+		%p
+		%h4.center Result
+		.img-container
+			.left 
+				%img{"ng-src" => "{{playerDecisionImage}}"}/
+			.right
+				%img{"ng-src" => "{{computerDecisionImage}}"}/
+		.decision
+			.third.center Player Move:  {{ playerDecision }}
+			.third.center vs.
+			.third.center Computer Move: {{ computerDecision }}
+		.result
+			%span{ "ng-if" => "result && (result != 'tie')"}
+				{{ result }} wins!
+			%span{ "ng-if" => "result == 'tie'"}
+				It's a tie!
+
+	%script{ :src => "./bower_components/angular/angular.min.js"}
+	%script{ :src => "./js/app.js"}
+	%script{ :src => "./js/gameService.js"}

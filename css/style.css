@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  background: snow;
+  text-align: center;
+  font-weight: bold; }
+
+.container {
+  margin: auto;
+  width: 800px; }
+
+h4::after, h1::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.selection {
+  clear: both;
+  display: block;
+  color: #333; }
+  .selection::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+input, select {
+  margin: auto;
+  display: block;
+  border-radius: 4px; }
+  input::after, select::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.third {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  .third:last-child {
+    margin-right: 0; }
+
+.img-container::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.decision {
+  margin: auto;
+  clear: both;
+  padding-bottom: 20px; }
+  .decision::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.center {
+  text-align: center; }
+
+.selection-wrapper {
+  margin: auto;
+  max-width: 300px; }
+
+.left {
+  float: right; }
+
+.right {
+  float: left; }
+
+.left, .right {
+  display: inline-block;
+  max-width: 300px; }
+  .left img, .right img {
+    width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

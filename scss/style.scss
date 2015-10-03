@@ -1,0 +1,63 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "../bower_components/neat/app/assets/stylesheets/_neat";
+
+body {
+	font-family: $helvetica;
+	background:snow; 
+	text-align: center;
+	font-weight: bold;
+}
+.container {
+		margin:auto;
+		width: 800px;
+}
+h4, h1 {
+	@include clearfix;
+}
+.selection {
+	clear:both;
+	display:block;
+	@include clearfix;
+	color: #333;
+}
+
+input, select {
+	margin:auto;
+		display:block;
+	@include clearfix;
+	border-radius:4px;
+}
+.third {
+		@include span-columns(4);
+
+}
+.img-container {
+		@include clearfix;
+}
+.decision {
+	margin:auto;
+	@include clearfix;
+	clear:both;
+	padding-bottom: 20px;
+}
+.center {
+	text-align: center;
+}
+	.selection-wrapper {
+		margin:auto;
+		max-width: 300px;
+	}
+.left {
+	float:right;
+
+}
+.right {
+	float:left;
+}
+.left, .right {
+	display:inline-block;
+	max-width:300px;
+	img {
+		width:100%;
+	}
+}

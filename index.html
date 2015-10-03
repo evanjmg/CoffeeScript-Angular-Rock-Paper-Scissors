@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='Rps'></html>
+<head>
+  <meta charset='UTF-8'>
+  <title>Document</title>
+  <link href='./css/style.css' rel='stylesheet'>
+</head>
+<body ng-controller='MainCtrl as main'>
+  <div class='container'>
+    <h1 class='center'>Rock Paper Scissors</h1>
+    <hr>
+    <div class='selection-wrapper'>
+      <h4 class='center'>Make a Decision</h4>
+      <select ng-model='selectorValue'>
+        <option>Rock</option>
+        <option>Paper</option>
+        <option>Scissors</option>
+      </select>
+      <div class='selection' ng-show='selectorValue'>
+        {{ selectorValue }}
+      </div>
+      <button class='submit' ng-click='decide()'>Submit</button>
+    </div>
+    <p></p>
+    <h4 class='center'>Result</h4>
+    <div class='img-container'>
+      <div class='left'>
+        <img ng-src='{{playerDecisionImage}}'>
+      </div>
+      <div class='right'>
+        <img ng-src='{{computerDecisionImage}}'>
+      </div>
+    </div>
+    <div class='decision'>
+      <div class='third center'>Player Move:  {{ playerDecision }}</div>
+      <div class='third center'>vs.</div>
+      <div class='third center'>Computer Move: {{ computerDecision }}</div>
+    </div>
+    <div class='result'>
+      <span ng-if="result &amp;&amp; (result != 'tie')">
+        {{ result }} wins!
+      </span>
+      <span ng-if="result == 'tie'">
+        It's a tie!
+      </span>
+    </div>
+  </div>
+  <script src='./bower_components/angular/angular.min.js'></script>
+  <script src='./js/app.js'></script>
+  <script src='./js/gameService.js'></script>
+</body>
